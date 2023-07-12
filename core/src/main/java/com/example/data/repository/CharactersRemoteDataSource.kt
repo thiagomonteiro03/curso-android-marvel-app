@@ -1,6 +1,11 @@
 package com.example.data.repository
 
-interface CharactersRemoteDataSource<T> {
+import com.example.domain.model.CharacterPaging
+import com.example.domain.model.Comic
 
-    suspend fun fetchCharacters(queries: Map<String, String>): T
+interface CharactersRemoteDataSource {
+
+    suspend fun fetchCharacters(queries: Map<String, String>): CharacterPaging
+
+    suspend fun fetchComics(characterId: Int): List<Comic>
 }
