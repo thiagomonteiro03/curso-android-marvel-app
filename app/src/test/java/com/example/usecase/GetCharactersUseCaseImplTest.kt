@@ -23,10 +23,10 @@ import org.mockito.Mock
 import org.mockito.Mockito.times
 import org.mockito.junit.MockitoJUnitRunner
 
+@OptIn(ExperimentalCoroutinesApi::class)
 @RunWith(MockitoJUnitRunner::class)
 class GetCharactersUseCaseImplTest {
 
-    @OptIn(ExperimentalCoroutinesApi::class)
     @get:Rule
     val mainCoroutinesRule = MainCoroutineRule()
 
@@ -44,7 +44,6 @@ class GetCharactersUseCaseImplTest {
         getCharactersUseCase = GetCharactersUseCaseImpl(repository)
     }
 
-    @OptIn(ExperimentalCoroutinesApi::class)
     @Test
     fun `should validate flow paging data creatin when invoke from use case is called`() = runTest {
         whenever(repository.getCharacters(any()))
