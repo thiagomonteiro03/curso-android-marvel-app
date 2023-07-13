@@ -15,7 +15,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="contentDescription"
-        tools:srcCompat="@tools:sample/avatars"/>
+        android:background="@color/medium_grey"
+        tools:ignore="contentDescription"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

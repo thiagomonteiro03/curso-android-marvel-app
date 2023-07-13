@@ -5,6 +5,7 @@ import com.example.data.repository.CharactersRemoteDataSource
 import com.example.data.repository.CharactersRepository
 import com.example.domain.model.Character
 import com.example.domain.model.Comic
+import com.example.domain.model.Event
 import com.example.marvelapp.framework.paging.CharactersPagingSource
 import javax.inject.Inject
 
@@ -18,6 +19,10 @@ class CharactersRepositoryImpl @Inject constructor(
 
     override suspend fun getComics(characterId: Int): List<Comic> {
         return remoteDataSource.fetchComics(characterId)
+    }
+
+    override suspend fun getEvents(characterId: Int): List<Event> {
+        return remoteDataSource.fetchEvents(characterId)
     }
 
 }
