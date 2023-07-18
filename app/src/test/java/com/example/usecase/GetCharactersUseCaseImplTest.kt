@@ -1,7 +1,6 @@
 package com.example.usecase
 
 import androidx.paging.PagingConfig
-import androidx.paging.PagingSource
 import com.example.data.repository.CharactersRepository
 import com.example.testing.MainCoroutineRule
 import com.example.testing.model.CharacterFactory
@@ -10,23 +9,20 @@ import com.nhaarman.mockitokotlin2.any
 import com.nhaarman.mockitokotlin2.verify
 import com.nhaarman.mockitokotlin2.whenever
 import kotlinx.coroutines.ExperimentalCoroutinesApi
-import kotlinx.coroutines.flow.count
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.test.runTest
-import org.junit.Assert.assertEquals
 import org.junit.Assert.assertNotNull
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.mockito.Mock
-import org.mockito.Mockito.times
 import org.mockito.junit.MockitoJUnitRunner
 
+@OptIn(ExperimentalCoroutinesApi::class)
 @RunWith(MockitoJUnitRunner::class)
 class GetCharactersUseCaseImplTest {
 
-    @OptIn(ExperimentalCoroutinesApi::class)
     @get:Rule
     val mainCoroutinesRule = MainCoroutineRule()
 
@@ -44,7 +40,6 @@ class GetCharactersUseCaseImplTest {
         getCharactersUseCase = GetCharactersUseCaseImpl(repository)
     }
 
-    @OptIn(ExperimentalCoroutinesApi::class)
     @Test
     fun `should validate flow paging data creatin when invoke from use case is called`() = runTest {
         whenever(repository.getCharacters(any()))
