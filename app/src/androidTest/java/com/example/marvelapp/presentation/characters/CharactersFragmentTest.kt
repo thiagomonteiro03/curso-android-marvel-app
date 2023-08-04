@@ -11,6 +11,7 @@ import com.example.marvelapp.R
 import com.example.marvelapp.extension.asJsonString
 import com.example.marvelapp.framework.di.BaseUrlModule
 import com.example.marvelapp.framework.di.CoroutinesModule
+import com.example.marvelapp.presentation.characters.adapters.CharactersViewHolder
 import com.example.marvelapp.presentation.extensions.launchFragmentInHiltContainer
 import dagger.hilt.android.testing.HiltAndroidRule
 import dagger.hilt.android.testing.HiltAndroidTest
