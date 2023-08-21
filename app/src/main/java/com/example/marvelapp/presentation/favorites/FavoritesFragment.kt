@@ -28,7 +28,6 @@ class FavoritesFragment : Fragment() {
             FavoritesViewHolder.create(it, imageLoader)
         }
     }
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
