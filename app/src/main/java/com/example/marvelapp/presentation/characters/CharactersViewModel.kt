@@ -4,7 +4,6 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.asLiveData
-import androidx.lifecycle.distinctUntilChanged
 import androidx.lifecycle.switchMap
 import androidx.lifecycle.viewModelScope
 import androidx.paging.PagingConfig
@@ -38,12 +37,6 @@ class CharactersViewModel @Inject constructor(
                     }.asLiveData(coroutinesDispatchers.main())
                 }
             }
-    }
-
-    fun charactersPagingData(query: String): Flow<PagingData<Character>> {
-        return getCharactersUseCase(
-            GetCharactersUseCase.GetCharactersParams(query, getPageConfig())
-        ).cachedIn(viewModelScope)
     }
 
     private fun getPageConfig() = PagingConfig(
